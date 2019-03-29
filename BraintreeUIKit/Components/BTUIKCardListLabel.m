@@ -23,6 +23,9 @@
         self.availablePaymentOptionAttachments = @[];
 
         self.availablePaymentOptions = @[];
+
+        self.accessibilityTraits = UIAccessibilityTraitImage;
+        self.accessibilityLabel = @"Card Icons";
     }
     return self;
 }

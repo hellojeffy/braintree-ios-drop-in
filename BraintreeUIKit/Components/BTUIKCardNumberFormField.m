@@ -54,6 +54,9 @@
         self.loadingView = [UIActivityIndicatorView new];
         self.loadingView.activityIndicatorViewStyle = [BTUIKAppearance sharedInstance].activityIndicatorViewStyle;
         [self.loadingView sizeToFit];
+
+        // TO DO: test this on an actual screen reader and make sure it is necessary
+        self.accessibilityHint = @"Accepts card number";
     }
     return self;
 }

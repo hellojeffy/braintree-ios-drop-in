@@ -51,6 +51,9 @@
         self.selectedBackgroundView = backgroundView;
         self.backgroundView = nil;
         [self applyConstraints];
+
+        // TO DO: the accesibility trait shows as "button" and "static text" now which it inherited from the UITableViewCell. Get rid of "static text" part?
+        self.accessibilityTraits = UIAccessibilityTraitButton;
     }
     return self;
 }
