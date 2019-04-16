@@ -276,7 +276,7 @@
               
                 // Optionally configure the supported cards to display
                 NSMutableArray *displayCardTypes = [NSMutableArray new];
-                for (NSNumber *cardTypeToDisplay in [_dropInRequest supportedCardsDisplayed]) {
+                for (NSNumber *cardTypeToDisplay in [self._dropInRequest supportedCardsDisplayed]) {
                     BTUIKPaymentOptionType displayType = (BTUIKPaymentOptionType) [cardTypeToDisplay integerValue];
                     if (![displayCardTypes containsObject:@(displayType)] && displayType != BTUIKPaymentOptionTypeUnknown) {
                         [displayCardTypes addObject:@(displayType)];
@@ -292,7 +292,7 @@
                 }
                 self.displayCardTypes = paymentOptionTypes;
                 
-                if (self.canSkipSelectionController && [_dropInRequest onlyCardEnabled] && [BTUIKAppearance sharedInstance].shouldSkipPaymentSelectionScreen) {
+                if (self.canSkipSelectionController && [self._dropInRequest onlyCardEnabled] && [BTUIKAppearance sharedInstance].shouldSkipPaymentSelectionScreen) {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [self showLoadingScreen:NO];
                         [self performSelector:@selector(showCardForm:) withObject:self];
